@@ -1,8 +1,6 @@
 ---
-id: mi-primera-leccion
 title: 🚀 Ruta de Migración a DSpace Angular
 sidebar_label: Inicio
-slug: /
 sidebar_position: 1
 ---
 

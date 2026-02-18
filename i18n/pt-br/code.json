@@ -1,0 +1,26 @@
+{
+    "homepage.features.courses.title": {
+        "message": "Cursos de Especialização",
+        "description": "Title for the courses feature on the homepage"
+    },
+    "homepage.features.courses.description": {
+        "message": "Formação técnica avançada sobre DSpace 7, 8 e 9, projetada para administradores de repositórios e desenvolvedores.",
+        "description": "Description for the courses feature on the homepage"
+    },
+    "homepage.features.docs.title": {
+        "message": "Documentação e Guias",
+        "description": "Title for the documentation feature on the homepage"
+    },
+    "homepage.features.docs.description": {
+        "message": "Acesse manuais passo a passo, melhores práticas e roteiros de migração detalhados para otimizar sua infraestrutura.",
+        "description": "Description for the documentation feature on the homepage"
+    },
+    "homepage.features.support.title": {
+        "message": "Suporte Comunitário",
+        "description": "Title for the support feature on the homepage"
+    },
+    "homepage.features.support.description": {
+        "message": "Recursos compartilhados e colaboração técnica para fortalecer a comunidade de repositórios da LA Referencia e Lyrasis.",
+        "description": "Description for the support feature on the homepage"
+    }
+}

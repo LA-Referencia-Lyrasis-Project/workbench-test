@@ -6,25 +6,69 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #3a5180;
+  --ifm-color-primary-dark: #344973;
+  --ifm-color-primary-darker: #31456d;
+  --ifm-color-primary-darkest: #28395a;
+  --ifm-color-primary-light: #40598d;
+  --ifm-color-primary-lighter: #435d93;
+  --ifm-color-primary-lightest: #4d6ba9;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Altura de la Navbar */
+  --ifm-navbar-height: 6rem;
+
+  /* Color de marca Secundario/Tip */
+  --ifm-color-success: #138c72;
+  --ifm-color-success-dark: #117e67;
+  --ifm-color-success-darker: #107761;
+  --ifm-color-success-darkest: #0d6250;
+  --ifm-color-success-light: #159a7d;
+  --ifm-color-success-lighter: #16a183;
+  --ifm-color-success-lightest: #1ab895;
+
+  /* Color de marca Info/Turquesa */
+  --ifm-color-info: #04bab8;
+  --ifm-color-info-dark: #04a7a6;
+  --ifm-color-info-darker: #039e9c;
+  --ifm-color-info-darkest: #038281;
+  --ifm-color-info-light: #04cdcb;
+  --ifm-color-info-lighter: #04d6d4;
+  --ifm-color-info-lightest: #05f2ef;
+
+  /* Color de marca Warning/Amarillo */
+  --ifm-color-warning: #f8bd4f;
+  --ifm-color-warning-dark: #f7b027;
+  --ifm-color-warning-darker: #f6aa13;
+  --ifm-color-warning-darkest: #cb8b0f;
+  --ifm-color-warning-light: #f9ca77;
+  --ifm-color-warning-lighter: #fad08b;
+  --ifm-color-warning-lightest: #fbe3c6;
+
+  /* Color de marca Danger/Rojo */
+  --ifm-color-danger: #f1686a;
+  --ifm-color-danger-dark: #ef4c4f;
+  --ifm-color-danger-darker: #ee3e42;
+  --ifm-color-danger-darkest: #c43336;
+  --ifm-color-danger-light: #f38485;
+  --ifm-color-danger-lighter: #f49293;
+  --ifm-color-danger-lightest: #f8bebf;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #5c78b3;
+  --ifm-color-primary-dark: #4b66a1;
+  --ifm-color-primary-darker: #476098;
+  --ifm-color-primary-darkest: #3a4f7d;
+  --ifm-color-primary-light: #6d8ac5;
+  --ifm-color-primary-lighter: #7693ce;
+  --ifm-color-primary-lightest: #90aadb;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.navbar__logo {
+  height: 3.5rem;
+  width: auto;
 }

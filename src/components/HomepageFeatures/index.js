@@ -1,41 +1,54 @@
+import Translate, { translate } from '@docusaurus/Translate';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: (
+      <Translate id="homepage.features.courses.title">
+        Cursos de Especialización
+      </Translate>
+    ),
+    Svg: require('@site/static/img/certification-bro.svg').default,
     description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
+      <Translate id="homepage.features.courses.description">
+        Formación técnica avanzada sobre DSpace 7, 8 y 9, diseñada para
+        administradores de repositorios y desarrolladores.
+      </Translate>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: (
+      <Translate id="homepage.features.docs.title">
+        Documentación y Guías
+      </Translate>
+    ),
+    Svg: require('@site/static/img/knowledge-amico.svg').default,
     description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
+      <Translate id="homepage.features.docs.description">
+        Accede a manuales paso a paso, mejores prácticas y rutas de migración
+        detalladas para optimizar tu infraestructura.
+      </Translate>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: (
+      <Translate id="homepage.features.support.title">
+        Soporte Comunitario
+      </Translate>
+    ),
+    Svg: require('@site/static/img/coding-workshop-amico.svg').default,
     description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
+      <Translate id="homepage.features.support.description">
+        Recursos compartidos y colaboración técnica para fortalecer la
+        comunidad de repositorios de LA Referencia y Lyrasis.
+      </Translate>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ Svg, title, description }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">

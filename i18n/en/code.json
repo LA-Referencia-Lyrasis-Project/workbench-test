@@ -1,0 +1,26 @@
+{
+    "homepage.features.courses.title": {
+        "message": "Specialization Courses",
+        "description": "Title for the courses feature on the homepage"
+    },
+    "homepage.features.courses.description": {
+        "message": "Advanced technical training on DSpace 7, 8, and 9, designed for repository administrators and developers.",
+        "description": "Description for the courses feature on the homepage"
+    },
+    "homepage.features.docs.title": {
+        "message": "Documentation and Guides",
+        "description": "Title for the documentation feature on the homepage"
+    },
+    "homepage.features.docs.description": {
+        "message": "Access step-by-step manuals, best practices, and detailed migration roadmaps to optimize your infrastructure.",
+        "description": "Description for the documentation feature on the homepage"
+    },
+    "homepage.features.support.title": {
+        "message": "Community Support",
+        "description": "Title for the support feature on the homepage"
+    },
+    "homepage.features.support.description": {
+        "message": "Shared resources and technical collaboration to strengthen the LA Referencia and Lyrasis repository community.",
+        "description": "Description for the support feature on the homepage"
+    }
+}

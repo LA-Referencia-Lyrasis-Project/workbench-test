@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmy_website=globalThis.webpackChunkmy_website||[]).push([[1903],{1912(e){e.exports=JSON.parse('{"blogBasePath":"/workbench-test/blog","blogTitle":"Blog","authorsListPath":"/workbench-test/blog/authors"}')}}]);

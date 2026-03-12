@@ -1,0 +1,165 @@
+---
+title: 🚀 Módulo 1 - Planeación y Estrategia de Migración
+sidebar_label: Módulo 1
+---
+
+# 🚀 Módulo 1: Planeación y Estrategia de Migración
+
+Este módulo constituye la base estratégica para la actualización de repositorios **DSpace 5.x/6.x** hacia las versiones modernas (7, 8 o 9). Aquí aprenderás a diagnosticar tu estado actual, elegir la ruta técnica adecuada y preparar una infraestructura robusta que garantice la sostenibilidad del proyecto.
+
+---
+
+## 📋 Ficha de Requisitos Previos
+
+:::caution Nota de No-Secuencialidad
+Este módulo es de carácter estratégico y de planificación. Si ya cuentas con una hoja de ruta definida y los servidores listos, puedes avanzar directamente al **Módulo 2: El Nuevo Backend**.
+:::
+
+:::info Conocimientos previos
+Para este módulo necesitas estar familiarizado con la gestión de repositorios institucionales; si no conoces los requerimientos básicos de Java o Maven, te sugerimos revisar el material complementario del Módulo 2.
+:::
+
+---
+
+## 🎯 Objetivos de Aprendizaje
+
+Al finalizar este módulo, serás capaz de:
+
+- **Diferenciar** las arquitecturas de DSpace clásico (5.x/6.x) frente al modelo moderno de DSpace Angular (7.x, 8.x o 9.x).
+- **Evaluar y seleccionar** la versión de destino adecuada (7, 8 o 9) basada en necesidades técnicas y funcionales.
+- **Diseñar** una estrategia de infraestructura que contemple entornos de homologación y producción.
+- **Ejecutar** un inventario de personalizaciones para mitigar riesgos durante la migración.
+- **Trazar** una hoja de ruta de gestión del cambio para usuarios finales e investigadores.
+
+---
+
+## 1️⃣ El Nuevo Paradigma: Arquitectura Desacoplada
+
+Migrar a DSpace 9 implica abandonar el modelo monolítico. Ahora, el sistema se divide en **dos componentes** que se comunican a través de una REST API:
+
+1. ⚙️ **DSpace Backend**: El motor basado en Java que gestiona la lógica, los datos y el almacenamiento.
+2. 💻 **DSpace Angular Frontend**: La interfaz de usuario moderna, rápida y optimizada para SEO.
+
+> 💡 *Este cambio permite que tu repositorio sea más flexible, pero requiere una planificación más rigurosa de los recursos del servidor.*
+
+---
+
+## 2️⃣ Análisis de Versiones y Toma de Decisiones
+
+DSpace ha evolucionado rápidamente. Aunque el curso se centra en la versión 9, es vital entender el panorama actual para justificar la actualización ante las autoridades de tu institución:
+
+- **DSpace 7.x**: El primer gran paso al mundo Angular; introdujo las "Entidades".
+- **DSpace 8.x**: Consolidó la estabilidad y mejoró la indexación con Solr.
+- **DSpace 9.x (Meta 2026)**: La versión más madura, con soporte completo para OpenAIRE 4 y optimización en la gestión de archivos (bitstreams).
+
+### 📊 El Infográfico de Decisión
+
+*(Aquí se inserta el Infográfico Institucional: Diferencias DSpace 7, 8 y 9 de Luciana).*
+Este recurso te ayudará a visualizar por qué la versión 9 es la opción lógica para la sostenibilidad a largo plazo.
+
+### 🛣️ ¿Migración Directa o Secuencial?
+
+Una de las decisiones más críticas es definir el camino que seguirán tus datos.
+
+#### La Ruta Técnica
+A diferencia de otros softwares, en DSpace **no es necesario** instalar físicamente cada versión intermedia (ej. instalar el software de la 7, luego el de la 8) para llegar a la 9.
+
+- 🗄️ **Actualización de Base de Datos**: Los scripts modernos de DSpace están diseñados para llevar el esquema de la base de datos desde versiones 5.x o 6.x directamente al esquema actual de forma programática.
+- 📁 **Migración de Archivos**: La transferencia de bitstreams (archivos físicos) y la verificación de su integridad se realiza hacia el nuevo repositorio de forma masiva.
+
+:::tip Recomendación
+Se recomienda saltar directamente a la versión más estable y reciente (DSpace 9 en 2026) para evitar la obsolescencia técnica prematura y aprovechar el soporte de OpenAIRE 4 desde el inicio.
+:::
+
+---
+
+## 3️⃣ Estrategia de Entornos: Homologación vs. Producción
+
+Como requisito fundamental para el equipo de TI, la migración **nunca** debe realizarse directamente sobre el servidor activo. Debemos establecer dos frentes:
+
+### 🧪 El Servidor de Homologación (Staging)
+Es tu zona de pruebas segura. Aquí es donde:
+- Ejecutas los scripts de actualización de la base de datos de 5.x/6.x a DSpace 9.
+- Pruebas que tus archivos (bitstreams) no se hayan corrompido en el traslado.
+- Validas que el tema visual (branding) no interfiera con las funciones del sistema.
+
+### 🚀 El Servidor de Producción
+Configurado para el alto rendimiento. Debe contar con:
+- 🔒 **Seguridad**: Protocolos HTTPS, certificados y autenticación robusta (LDAP/ORCID).
+- 🔗 **Persistencia**: Configuración de Handles o DOIs para asegurar que los enlaces no mueran tras la migración.
+
+---
+
+## 4️⃣ Inventario de Personalizaciones e Interoperabilidad
+
+Antes de instalar, debemos auditar el pasado. ¿Qué tiene tu DSpace actual que sea "especial"?
+
+- 🔍 **Identificación de Código**: Lista las funciones que no son nativas. DSpace 9 ya incluye muchas de estas de forma estándar (ej. mejores estadísticas o integración con Matomo).
+- 🌐 **Alineación Regional**: Asegúrate de que tu mapeo de metadatos cumpla con los estándares de LA Referencia.
+
+---
+
+## 5️⃣ Gestión del Cambio y Visibilidad
+
+La migración es una oportunidad estratégica para mejorar la visibilidad institucional:
+
+- 🤝 **Interoperabilidad**: Alineación con OpenAIRE 4 y los estándares regionales de LA Referencia.
+- 🏷️ **Identificadores**: Configuración de Handles, DOIs y preparación para identificadores como ARK.
+- 📢 **Socialización**: Crear una hoja de ruta para que los investigadores comprendan las mejoras en el uso de perfiles y estadísticas.
+
+---
+
+## 📝 Resumen del Módulo
+
+Hemos cubierto la importancia de la planificación estratégica, entendiendo que DSpace 9 es una herramienta poderosa pero estructuralmente distinta a sus predecesoras. La separación de entornos y la auditoría de lo que ya tenemos son los pilares para que el proceso técnico sea fluido y sin sorpresas para TI.
+
+### 🧠 Lo que aprendimos
+- **DSpace 9 es el estándar actual**: Ofrece la mejor estabilidad y cumplimiento normativo.
+- **Arquitectura**: Ahora el Frontend y el Backend "hablan" por separado a través de una API.
+- **Seguridad ante todo**: Es indispensable contar con un servidor de homologación antes de tocar la producción.
+- **Inventario**: No todo el código viejo debe migrar; muchas funciones ahora son nativas en DSpace 9.
+- **Estrategia**: El inventario de personalizaciones es el primer paso para evitar fallos en la nueva interfaz.
+
+---
+
+## 🔜 Ficha de Requisitos Previos para el Siguiente Paso
+
+- 📈 **Nivel**: Técnico intermedio.
+- 🛠️ **Insumos**: Acceso a una copia de la base de datos actual (PostgreSQL) y archivos físicos del repositorio.
+- ➡️ **Siguiente Módulo**: En el Módulo 2, instalaremos el Backend y configuraremos la REST API.
+
+---
+
+## 📚 Materiales y Soporte
+
+- 🤖 **Consultas Asistidas por IA**: Puedes utilizar el agente chatbot del proyecto para resolver dudas específicas sobre tu configuración de servidor.
+- 📖 **Documentación**: Consulta los manuales ES/PT producidos para la navegación efectiva por las nuevas funcionalidades.
+- 💬 **Comunidad**: Aprende a usar el tablero de soporte en GitHub para reportar errores técnicos durante tu planeación.
+
+---
+
+import Module1Quiz from '@site/src/components/Module1Quiz';
+
+## 📝 Evaluación: Módulo 1 - Planeación y Estrategia
+
+Para obtener tu certificado de este módulo, por favor completa la siguiente evaluación interactiva:
+
+<Module1Quiz />
+
+---
+
+## 🎓 Propuesta de Certificado
+
+**CERTIFICADO DE LOGRO**  
+*LA Referencia - Red Latinoamericana y de España de Ciencia Abierta*
+
+Se otorga el presente reconocimiento a: **[Nombre del Usuario]**  
+Por haber completado exitosamente el: **Módulo 1: Planeación y Estrategia de Migración** del curso "Ruta de Migración a DSpace Angular".
+
+**Competencias adquiridas:**
+- Análisis de infraestructura y entornos de homologación.
+- Definición de rutas de actualización de base de datos.
+- Estrategia de gestión del cambio institucional.
+
+**Fecha de emisión:** [DD/MM/2026]  
+**ID de Verificación:** [Código-Único]

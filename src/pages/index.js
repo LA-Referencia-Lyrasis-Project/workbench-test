@@ -21,9 +21,9 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/leccion-prueba">
+            to="/docs/curso-dspace-2026">
             <Translate id="homepage.hero.button">
-              Propuesta Curso DSpace 2026
+              Curso DSpace 2026
             </Translate>
           </Link>
         </div>

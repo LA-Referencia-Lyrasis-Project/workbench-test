@@ -51,12 +51,13 @@ export default function Module1Quiz() {
   const [isCorrect, setIsCorrect] = useState(null);
   const [showExplanation, setShowExplanation] = useState(false);
 
+
   const handleAnswerOptionClick = (index) => {
     setSelectedOption(index);
     const correct = index === questions[currentQuestion].answerIndex;
     setIsCorrect(correct);
     setShowExplanation(true);
-    
+
     if (correct) {
       setScore(score + 1);
     }
@@ -83,6 +84,7 @@ export default function Module1Quiz() {
     setShowExplanation(false);
   };
 
+
   return (
     <div style={{
       padding: '2rem',
@@ -97,14 +99,46 @@ export default function Module1Quiz() {
           <p style={{ fontSize: '1.2rem', margin: '1rem 0' }}>
             Obtuviste {score} de {questions.length} respuestas correctas ({(score / questions.length) * 100}%).
           </p>
-          <button 
-            onClick={resetQuiz}
-            className="button button--primary button--lg"
-            style={{ marginTop: '1rem' }}
-          >
-            Empezar de nuevo
-          </button>
+
+          {score === questions.length ? (
+            <div style={{
+              marginTop: '2rem',
+              padding: '1.5rem',
+              backgroundColor: 'var(--ifm-color-success-contrast-background)',
+              borderRadius: '8px',
+              border: '1px solid var(--ifm-color-success)'
+            }}>
+              <h3 style={{ color: 'var(--ifm-color-success-darkest)' }}>¡Felicidades! Has aprobado el módulo.</h3>
+              <p>Has demostrado tu conocimiento en Planeación y Estrategia de Migración.</p>
+
+              <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+                <a
+                  href="https://example.com/reclamar-insignia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button button--success button--lg"
+                  style={{ textDecoration: 'none' }}
+                >
+                  🏆 Reclamar Insignia en VirtualBadge / Badgr
+                </a>
+                <p style={{ fontSize: '0.9rem', color: 'var(--ifm-color-emphasis-600)', margin: 0 }}>
+                  Serás redirigido a una plataforma externa para emitir tu certificado.
+                </p>
+              </div>
+            </div>
+          ) : (
+            <div style={{ marginTop: '2rem' }}>
+              <p style={{ color: 'var(--ifm-color-danger)' }}>Debes obtener un 100% para recibir el certificado.</p>
+              <button
+                onClick={resetQuiz}
+                className="button button--primary button--lg"
+              >
+                Reintentar Evaluación
+              </button>
+            </div>
+          )}
         </div>
+
       ) : (
         <div>
           <div style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -113,11 +147,11 @@ export default function Module1Quiz() {
               Puntuación actual: {score}
             </span>
           </div>
-          
+
           <div style={{ fontSize: '1.1rem', marginBottom: '1.5rem', fontWeight: 'bold' }}>
             {questions[currentQuestion].question}
           </div>
-          
+
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
             {questions[currentQuestion].options.map((option, index) => {
               let btnStyle = {
@@ -143,8 +177,8 @@ export default function Module1Quiz() {
               }
 
               return (
-                <button 
-                  key={index} 
+                <button
+                  key={index}
                   style={btnStyle}
                   onClick={() => selectedOption === null && handleAnswerOptionClick(index)}
                   disabled={selectedOption !== null}
@@ -168,8 +202,8 @@ export default function Module1Quiz() {
                 {isCorrect ? '¡Correcto!' : 'Incorrecto'}
               </h4>
               <p style={{ margin: 0 }}>{questions[currentQuestion].explanation}</p>
-              
-              <button 
+
+              <button
                 onClick={handleNextQuestion}
                 className="button button--secondary"
                 style={{ marginTop: '1rem' }}
